@@ -19,4 +19,7 @@ jobs:
         java-version: 21
 
     - name: Compile project
-      run: javac -d bin src/epigrafe_1/*.java
+      run: 
+        mkdir -p bin
+        find src -name "*.java" > sources.txt
+        javac -d bin @sources.txt
